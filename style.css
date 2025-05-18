@@ -1,0 +1,32 @@
+        /**************GENERAL**************/
+:root{
+    --bg-color:#;
+    --main-color:#;
+    --text-color:#;
+    --heading-color:#;
+    --subheading-color:#;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* html, body{
+    overflow-x: hidden;
+} */
+
+        /**************HEADER**************/
+header{
+    height: 100vh;
+    position: relative;
+    background-color: #d6d3a7;
+    z-index: 100;
+}
+
+main{
+    height:100vh;
+    position: relative;
+    z-index: 1;
+}
