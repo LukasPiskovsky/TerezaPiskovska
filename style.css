@@ -218,7 +218,7 @@ section h2::after{
 @media (max-width:868px){
 
     header nav {
-        top:0vw;
+        top:.2svh;
         backdrop-filter: blur(10px);
         display: none;
     }
