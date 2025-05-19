@@ -353,7 +353,12 @@ section h2::after{
         width: 100%;
         height: calc(var(--vh, 1vh) * 70);
         /* height:70svh; */
-        background-attachment: fixed;
+    }
+
+    @supports(background-attachment: fixed){
+        #header-img{
+            background-attachment: fixed
+        }
     }
 
     .main-heading{
