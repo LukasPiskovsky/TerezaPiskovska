@@ -110,7 +110,7 @@ nav ul li a:hover::after{
     display: flex;
     justify-content: start;
     align-items: center;
-    gap:10vw;
+    gap:0;
     height: calc(var(--vh, 1vh) * 100);
 }
 
@@ -269,7 +269,7 @@ section h2::after{
 
     .flex-header{
         flex-direction: column;
-        gap:calc(var(--vh, 1vh) * 8);
+        gap:0;
         height:calc(var(--vh, 1vh) * 100);
     }
 
