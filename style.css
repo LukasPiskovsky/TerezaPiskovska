@@ -111,6 +111,7 @@ nav ul li a:hover::after{
     justify-content: start;
     align-items: center;
     gap:10vw;
+    height: 100svh;
 }
 
 #header-img{
@@ -267,6 +268,7 @@ section h2::after{
     .flex-header{
         flex-direction: column;
         gap:8svh;
+        height:100svh;
     }
 
 
