@@ -2,26 +2,32 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // VARIABLES
+const menu = document.getElementById("menu")
+const navBar = document.querySelector("nav")
 const header = document.querySelector("header")
 const headingOne = document.querySelectorAll(".heading-one")
 const headingTwo = document.querySelector("#heading-two")
 const headingT = document.querySelector("#t")
 const headingP = document.querySelector("#p")
 const main = document.querySelector("main")
-const fromHeader = document.querySelector(".from-header")
+const slideFromHeader = document.querySelector(".slide-from-header")
 const aboutMe = document.getElementById("about-me")
 const aboutMeHeading = document.getElementById("about-me-heading")
-const menu = document.getElementById("menu")
-const navBar = document.querySelector("nav")
+const slideFromaboutMe = document.querySelector(".slide-from-about-me")
+const services = document.getElementById("services")
+const servicesHeading = document.getElementById("services-heading")
+const anchors = document.querySelectorAll("ul li a")
+const arrow = document.querySelectorAll(".arrow")
+const serviceP = document.querySelectorAll(".service-p")
+
 
 //vh
-
-function setRealVh() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    setRealVh();
-window.addEventListener('resize', setRealVh);
+// function setRealVh() {
+//     let vh = window.innerHeight * 0.01;
+//     document.documentElement.style.setProperty('--vh', `${vh}px`);
+//     }
+//     setRealVh();
+// window.addEventListener('resize', setRealVh);
 
 
 //Menu
@@ -36,7 +42,14 @@ menu.addEventListener("click", () =>{
     })})
 })
 
+//Services
 
+arrow.forEach((elem, index) =>{
+    elem.addEventListener("click", () =>{
+        elem.classList.toggle("arrow-open")
+        serviceP[index].classList.toggle("service-p-open")
+    })    
+})
 
 
 // ANIMATIONS
@@ -74,11 +87,24 @@ window.addEventListener("DOMContentLoaded", () =>{
     })
 })
 
+//navBar Anchors -> disable scrollinto view
+
+let isLinkClicked = false
+
+anchors.forEach((link) => {
+    link.addEventListener("click", () =>{
+        isLinkClicked = true
+        setTimeout(()=>{
+            isLinkClicked = false
+        }, 500)
+    })
+})
+
 //to about me
 if (window.innerWidth > 868){
-    gsap.from(fromHeader,{
+    gsap.from(slideFromHeader,{
         scrollTrigger:{
-            trigger:main,
+            trigger:aboutMe,
             start: "top 90%",
             end: "top 90%",
             toggleActions: "play none reset none",
@@ -87,13 +113,15 @@ if (window.innerWidth > 868){
         scale:0.6,
         duration:1,
         onStart: () => {
-            aboutMeHeading.scrollIntoView({behavior:"smooth",block: "start"})
+            if(!isLinkClicked){
+                aboutMeHeading.scrollIntoView({behavior:"smooth",block: "start"})
+            }
         }
     })
 } else {
-        gsap.from(fromHeader,{
+        gsap.from(slideFromHeader,{
         scrollTrigger:{
-            trigger:main,
+            trigger:aboutMe,
             start: "top 80%",
             end: "top 80%",
             toggleActions: "play none reset none",
@@ -102,7 +130,47 @@ if (window.innerWidth > 868){
         scale:0.6,
         duration:1,
         onStart: () => {
-            aboutMeHeading.scrollIntoView({behavior:"smooth",block: "start"})
+            if(!isLinkClicked){
+                aboutMeHeading.scrollIntoView({behavior:"smooth",block: "start"})
+            }
+        }
+    })
+}
+
+//to services
+if (window.innerWidth > 868){
+    gsap.from(slideFromaboutMe,{
+        scrollTrigger:{
+            trigger:services,
+            start: "top 90%",
+            end: "top 90%",
+            toggleActions: "play none reset none",
+        },
+        // x: -1000,
+        scale:0.6,
+        duration:1,
+        onStart: () => {
+            if(!isLinkClicked){
+                servicesHeading.scrollIntoView({behavior:"smooth",block: "start"})
+            }
+            
+        }
+    })
+} else {
+        gsap.from(slideFromaboutMe,{
+        scrollTrigger:{
+            trigger:services,
+            start: "top 80%",
+            end: "top 80%",
+            toggleActions: "play none reset none",
+        },
+        // x: -1000,
+        scale:0.6,
+        duration:1,
+        onStart: () => {
+            if(!isLinkClicked){
+                servicesHeading.scrollIntoView({behavior:"smooth",block: "start"})
+            }
         }
     })
 }
