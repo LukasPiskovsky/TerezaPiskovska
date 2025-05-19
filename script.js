@@ -8,7 +8,9 @@ headingTwo = document.querySelector("#heading-two")
 headingT = document.querySelector("#t")
 headingP = document.querySelector("#p")
 main = document.querySelector("main")
-fromHeader = document.querySelector("#from-header")
+fromHeader = document.querySelector(".from-header")
+aboutMe = document.getElementById("about-me")
+aboutMeHeading = document.getElementById("about-me-heading")
 
 
 
@@ -57,14 +59,19 @@ window.addEventListener("DOMContentLoaded", () =>{
 
 gsap.from(fromHeader,{
     scrollTrigger:{
-        trigger:fromHeader,
-        start: "top 90%",
-        end: "top 10%",
-        toggleActions: "play none none reverse",
-        scrub:true,
-        // markers:true
+        trigger:main,
+        start: "top 95%",
+        end: "top 95%",
+        toggleActions: "play none reset none",
+
+        markers:true
     },
-    y:-10
+    // x: -1000,
+    scale:0.6,
+    duration:1,
+    onStart: () => {
+           aboutMeHeading.scrollIntoView({behavior:"smooth",block: "start"})
+    }
 })
 
 
