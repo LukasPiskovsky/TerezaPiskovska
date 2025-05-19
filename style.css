@@ -268,7 +268,7 @@ section h2::after{
     }
 
     .flex-header{
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap:0;
         height:calc(var(--vh, 1vh) * 100);
     }
