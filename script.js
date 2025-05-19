@@ -67,18 +67,35 @@ window.addEventListener("DOMContentLoaded", () =>{
 })
 
 //to about me
-gsap.from(fromHeader,{
-    scrollTrigger:{
-        trigger:main,
-        start: "top 90%",
-        end: "top 90%",
-        toggleActions: "play none reset none",
-        markers:true
-    },
-    // x: -1000,
-    scale:0.6,
-    duration:1,
-    onStart: () => {
-           aboutMeHeading.scrollIntoView({behavior:"smooth",block: "start"})
-    }
-})
+if (window.innerWidth > 868){
+    gsap.from(fromHeader,{
+        scrollTrigger:{
+            trigger:main,
+            start: "top 90%",
+            end: "top 90%",
+            toggleActions: "play none reset none",
+            markers:true
+        },
+        // x: -1000,
+        scale:0.6,
+        duration:1,
+        onStart: () => {
+            aboutMeHeading.scrollIntoView({behavior:"smooth",block: "start"})
+        }
+    })
+} else {
+        gsap.from(fromHeader,{
+        scrollTrigger:{
+            trigger:main,
+            start: "top 70%",
+            end: "top 70%",
+            toggleActions: "play none reset none",
+        },
+        // x: -1000,
+        scale:0.6,
+        duration:1,
+        onStart: () => {
+            aboutMeHeading.scrollIntoView({behavior:"smooth",block: "start"})
+        }
+    })
+}
