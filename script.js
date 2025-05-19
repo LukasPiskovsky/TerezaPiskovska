@@ -14,9 +14,17 @@ const aboutMeHeading = document.getElementById("about-me-heading")
 const menu = document.getElementById("menu")
 const navBar = document.querySelector("nav")
 
+//vh
+
+function setRealVh() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setRealVh();
+window.addEventListener('resize', setRealVh);
+
+
 //Menu
-
-
 
 menu.addEventListener("click", () =>{
     navBar.classList.toggle("open")
