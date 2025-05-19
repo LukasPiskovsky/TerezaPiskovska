@@ -63,8 +63,6 @@ gsap.from(fromHeader,{
         start: "top 95%",
         end: "top 95%",
         toggleActions: "play none reset none",
-
-        markers:true
     },
     // x: -1000,
     scale:0.6,
