@@ -1,10 +1,10 @@
         /**************GENERAL**************/
 :root{
-    --bg-color:#;
-    --main-color:#;
-    --text-color:#;
-    --heading-color:#;
-    --subheading-color:#;
+    --beige-500:#f0d7a9;
+    --beige-700:#af9573;
+    --white-color:#F8F4F0;
+    --pink-500:#f0d0ea;
+    --pink-700:#;
 }
 
 *{
@@ -17,16 +17,91 @@
     overflow-x: hidden;
 } */
 
+body{
+    font-family: "Cormorant Garamond", serif;
+    color:var(--white-color)
+}
+
+h1,h2,h3 {
+    font-family: "Cinzel", serif;
+}
         /**************HEADER**************/
 header{
     height: 100vh;
     position: relative;
-    background-color: #d6d3a7;
+    background-color: var(--beige-700);
     z-index: 100;
 }
+#logo{
+    position: fixed;
+    right:40px;
+    top:20px;
+    width:5vw;
+    min-width: 60px;
+    border-radius: 50%;
+    z-index: 101;
+}
+
+.flex-header{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap:10vw;
+}
+
+#header-img{
+    background-image: url(img/header.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    width:50vw;
+    height: 100vh;
+    opacity: 0.7;
+    filter: brightness(0.9) contrast(0.8);
+}
+
+.main-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-heading h1{
+    font-size: clamp(2rem, 3vw, 6rem);
+}
+
+.main-heading h2{
+    font-size: clamp(1rem, 1.5vw, 3rem);
+    color:var(--pink-500) ;
+}
+
+#t, #p {
+    display:inline-block;
+}
+
+
 
 main{
     height:100vh;
     position: relative;
     z-index: 1;
+}
+
+
+/**QUERIES**/
+@media (max-width:868px){
+    .flex-header{
+        flex-direction: column;
+        gap:8vh;
+    }
+
+    #header-img{
+        background-image: url(img/header.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width:100vw;
+        height: 70vh;
+    }
 }
