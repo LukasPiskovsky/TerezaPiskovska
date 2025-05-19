@@ -2,22 +2,38 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // VARIABLES
-header = document.querySelector("header")
-headingOne = document.querySelectorAll(".heading-one")
-headingTwo = document.querySelector("#heading-two")
-headingT = document.querySelector("#t")
-headingP = document.querySelector("#p")
-main = document.querySelector("main")
-fromHeader = document.querySelector(".from-header")
-aboutMe = document.getElementById("about-me")
-aboutMeHeading = document.getElementById("about-me-heading")
+const header = document.querySelector("header")
+const headingOne = document.querySelectorAll(".heading-one")
+const headingTwo = document.querySelector("#heading-two")
+const headingT = document.querySelector("#t")
+const headingP = document.querySelector("#p")
+const main = document.querySelector("main")
+const fromHeader = document.querySelector(".from-header")
+const aboutMe = document.getElementById("about-me")
+const aboutMeHeading = document.getElementById("about-me-heading")
+const menu = document.getElementById("menu")
+const navBar = document.querySelector("nav")
 
+//Menu
+
+
+
+menu.addEventListener("click", () =>{
+    navBar.classList.toggle("open")
+    let isOpen = navBar.classList.contains("open")
+    menu.src = isOpen ? "img/close.svg" : "img/menu.svg"
+    document.querySelectorAll("nav a").forEach(link => {link.addEventListener("click", () =>{
+        navBar.classList.remove("open")
+        menu.src = "img/menu.svg"
+    })})
+})
 
 
 
 
 // ANIMATIONS
 
+//header
 window.addEventListener("DOMContentLoaded", () =>{
     gsap.from("#t", {
         x: "250%",
@@ -50,13 +66,7 @@ window.addEventListener("DOMContentLoaded", () =>{
     })
 })
 
-
-
-
-
-
-
-
+//to about me
 gsap.from(fromHeader,{
     scrollTrigger:{
         trigger:main,
@@ -71,15 +81,3 @@ gsap.from(fromHeader,{
            aboutMeHeading.scrollIntoView({behavior:"smooth",block: "start"})
     }
 })
-
-
-
-// gsap.to("main", {
-//   scrollTrigger: {
-//     trigger: "header",
-//     start: "bottom top",
-//     onLeave: () => {
-//       main.scrollIntoView({ behavior: "smooth" });
-//     }
-//   }
-// });

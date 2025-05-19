@@ -1,6 +1,7 @@
         /**************GENERAL**************/
 :root{
     --beige-500:#f0d7a9;
+    --beige-500-transparent:#f0d7a922;
     --beige-700:#af9573;
     --white-color:#F8F4F0;
     --pink-500:#f0d0ea;
@@ -13,9 +14,10 @@
     box-sizing: border-box;
 }
 
-/* html, body{
+html, body{
     overflow-x: hidden;
-} */
+    scroll-behavior: smooth;
+}
 
 body{
     font-family: "Cormorant Garamond", serif;
@@ -28,20 +30,80 @@ h1,h2,h3 {
 }
         /**************HEADER**************/
 header{
-    height: 100vh;
+    height: 100svh;
+    width: 100svw;
     position: relative;
     background-color: var(--beige-700);
     z-index: 100;
 }
-#logo{
+
+header nav {
     position: fixed;
-    right:40px;
-    top:20px;
-    width:5vw;
-    min-width: 60px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    z-index: 9999;
+    width: fit-content;
+    right:0vw;
+    top:0.5vw;
+    padding: 3px 30px 3px 30px;
+    border-radius: 20px 0px 0px 20px;
+    background: var(--beige-500-transparent);
+    backdrop-filter: blur(3px);
+}
+
+nav ul{
+    display: flex;
+    gap:1vw;
+    padding:10px;
+}
+
+nav ul li{
+    list-style-type: none;
+}
+
+nav ul li a{
+    position: relative;
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.3rem;
+    transition: all 0.4s ease-out;
+    padding:10px;
+}
+
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom:10%;
+    width:0px;
+    height:2px;
+    background-color: var(--pink-700);
+    transition: all 0.4s ease-out;
+    translate: -50%;
+    border-radius: 2px;
+}
+
+nav ul li a:hover::after{
+    width:30px;
+}
+
+#logo{
+    width:2vw;
+    min-width: 50px;
     border-radius: 50%;
     z-index: 101;
+    margin-left: 10px;
+    margin-top: 4px;
     filter: brightness(0.93);
+}
+
+#logoSM{
+    display: none;
+}
+
+#menu{
+    display: none;
 }
 
 .flex-header{
@@ -154,6 +216,54 @@ section h2::after{
 
 /**QUERIES**/
 @media (max-width:868px){
+
+    header nav {
+        top:0vw;
+        backdrop-filter: blur(10px);
+        display: none;
+    }
+
+    header nav.open{
+        display: flex;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        gap:2vw;
+        padding:10px;
+    }
+
+    nav ul li a{
+        padding:5px;
+    }
+
+    #logo{
+        display: none;
+    }
+
+    #logoSM{
+        display: block;
+        position: fixed;
+        width:2vw;
+        left:1vw;
+        top:1vh;
+        min-width: 40px;
+        border-radius: 50%;
+        z-index: 101;
+        filter: brightness(0.93);
+        opacity: 0.6;
+    }
+
+    #menu{
+        display: block;
+        position: fixed;
+        right:2vw;
+        top:2vh;
+        z-index: 999999;
+        cursor: pointer;
+    }
+
     .flex-header{
         flex-direction: column;
         gap:8vh;
