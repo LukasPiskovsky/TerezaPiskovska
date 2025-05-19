@@ -116,11 +116,11 @@ nav ul li a:hover::after{
 
 #header-img{
     background-image: url(img/header.jpg);
-    background-position: center;
+    background-position:center;
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: calc(var(--vh, 1vh) * 70);
+    background-size:cover;
+    width:50vw;
+    height: calc(var(--vh, 1vh) * 100);
     opacity: 0.7;
     filter: brightness(0.9) contrast(0.8);
 }
@@ -130,6 +130,8 @@ nav ul li a:hover::after{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width:50vw;
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 .main-heading h1{
@@ -271,6 +273,20 @@ section h2::after{
         height:calc(var(--vh, 1vh) * 100);
     }
 
+    #header-img{
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 70);
+    }
+
+    .main-heading{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        height: calc(var(--vh, 1vh) * 30);
+    }
+
 
 
     .grid-about-me{
@@ -284,17 +300,4 @@ section h2::after{
     width: 150px;
 }
 
-}
-
-@media (min-width:868px){
-    #header-img{
-        background-image: url(img/header.jpg);
-        background-position:center;
-        background-repeat: no-repeat;
-        background-size:cover;
-        width:50vw;
-        height: calc(var(--vh, 1vh) * 100);
-        opacity: 0.7;
-        filter: brightness(0.9) contrast(0.8);
-    }
 }
