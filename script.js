@@ -87,8 +87,8 @@ if (window.innerWidth > 868){
         gsap.from(fromHeader,{
         scrollTrigger:{
             trigger:main,
-            start: "top 70%",
-            end: "top 70%",
+            start: "top 80%",
+            end: "top 80%",
             toggleActions: "play none reset none",
         },
         // x: -1000,
