@@ -364,7 +364,9 @@ section h2::after{
         /* height: 30svh; */
     }
 
-
+    #about-me p {
+        text-wrap: balance;
+    }
 
     .grid-about-me{
         display: grid;
