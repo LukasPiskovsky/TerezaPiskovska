@@ -18,14 +18,14 @@ fromHeader = document.querySelector("#from-header")
 
 window.addEventListener("DOMContentLoaded", () =>{
     gsap.from("#t", {
-        x: "200%",
+        x: "250%",
         duration:2.5,
         delay:1,
         scale:2,
         ease: "power3"
     })
     gsap.from("#p", {
-        x: "-200%",
+        x: "-220%",
         y:-30,
         duration:2.5,
         delay:1,
