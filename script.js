@@ -70,8 +70,8 @@ window.addEventListener("DOMContentLoaded", () =>{
 gsap.from(fromHeader,{
     scrollTrigger:{
         trigger:main,
-        start: "top 95%",
-        end: "top 95%",
+        start: "top 90%",
+        end: "top 90%",
         toggleActions: "play none reset none",
         markers:true
     },
