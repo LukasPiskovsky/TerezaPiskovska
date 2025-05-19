@@ -41,6 +41,7 @@ header{
     min-width: 60px;
     border-radius: 50%;
     z-index: 101;
+    filter: brightness(0.93);
 }
 
 .flex-header{
