@@ -74,7 +74,6 @@ if (window.innerWidth > 868){
             start: "top 90%",
             end: "top 90%",
             toggleActions: "play none reset none",
-            markers:true
         },
         // x: -1000,
         scale:0.6,
