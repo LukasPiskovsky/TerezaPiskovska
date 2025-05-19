@@ -276,6 +276,7 @@ section h2::after{
     #header-img{
         width: 100%;
         height: calc(var(--vh, 1vh) * 70);
+        background-attachment: fixed;
     }
 
     .main-heading{
