@@ -266,7 +266,7 @@ section h2::after{
 
     .flex-header{
         flex-direction: column;
-        gap:8vh;
+        gap:8svh;
     }
 
     #header-img{
