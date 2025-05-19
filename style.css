@@ -115,11 +115,11 @@ nav ul li a:hover::after{
 
 #header-img{
     background-image: url(img/header.jpg);
-    background-position:center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size:cover;
-    width:50vw;
-    height: 100svh;
+    background-size: cover;
+    width:100vw;
+    height: 70svh;
     opacity: 0.7;
     filter: brightness(0.9) contrast(0.8);
 }
@@ -269,14 +269,7 @@ section h2::after{
         gap:8svh;
     }
 
-    #header-img{
-        background-image: url(img/header.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width:100vw;
-        height: 70svh;
-    }
+
 
     .grid-about-me{
         display: grid;
@@ -289,4 +282,17 @@ section h2::after{
     width: 150px;
 }
 
+}
+
+@media (min-width:868px){
+    #header-img{
+        background-image: url(img/header.jpg);
+        background-position:center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        width:50vw;
+        height: 100svh;
+        opacity: 0.7;
+        filter: brightness(0.9) contrast(0.8);
+    }
 }
