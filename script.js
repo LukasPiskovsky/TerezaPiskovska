@@ -33,10 +33,17 @@ window.addEventListener("DOMContentLoaded", () =>{
         ease: "power3"
     })
 
-    gsap.from([headingTwo,headingOne], {
+    gsap.from(headingOne, {
         opacity:0,
         duration:4,
         delay:1.5,
+        ease: "power2"
+    })
+
+    gsap.from(headingTwo, {
+        x:"-50%",
+        duration:2,
+        delay:1,
         ease: "power2"
     })
 })
