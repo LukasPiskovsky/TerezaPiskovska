@@ -406,12 +406,6 @@ section h2::after{
         left:0;
     }
 
-    .my-light-box-content{
-        margin-top: 50%;
-        margin-bottom:0%;
-        translate: 0% -50%;
-    }
-
     .my-slides{
         display: block;
         width:100%;
