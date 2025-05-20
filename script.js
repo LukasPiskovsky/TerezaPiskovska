@@ -3,6 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // VARIABLES
 const menu = document.getElementById("menu")
+const logo = document.querySelector("#logo")
 const lightBox = document.querySelector(".my-light-box")
 const myImgs = document.querySelectorAll(".img-about-me")
 const shownImg = document.querySelector(".shown-img")
@@ -103,6 +104,8 @@ arrow.forEach((elem, index) =>{
 // ANIMATIONS
 
 //header
+
+let isHeaderAnimated = false
 window.addEventListener("DOMContentLoaded", () =>{
     gsap.from("#t", {
         x: "250%",
@@ -133,6 +136,48 @@ window.addEventListener("DOMContentLoaded", () =>{
         delay:1,
         ease: "power2"
     })
+    isHeaderAnimated = true
+    setTimeout(()=>{
+        isHeaderAnimated = false
+    },6000)
+})
+
+logo.addEventListener("click", () =>{
+    if(!isHeaderAnimated){
+        gsap.from("#t", {
+            x: "250%",
+            duration:2.5,
+            delay:1,
+            scale:2,
+            ease: "power3"
+        })
+        gsap.from("#p", {
+            x: "-220%",
+            y:-30,
+            duration:2.5,
+            delay:1,
+            scale:2,
+            ease: "power3"
+        })
+
+        gsap.from(headingOne, {
+            opacity:0,
+            duration:4,
+            delay:1.5,
+            ease: "power2"
+        })
+
+        gsap.from(headingTwo, {
+            x:"-50%",
+            duration:2,
+            delay:1,
+            ease: "power2"
+        })
+        isHeaderAnimated = true
+        setTimeout(() => {
+            isHeaderAnimated = false
+        }, 6000);
+    }
 })
 
 //navBar Anchors -> disable scrollinto view
@@ -184,20 +229,20 @@ let startEnd = window.innerWidth > 868 ? "top 90%" : "top 80%"
         }
     })
 
-//to price list
-    gsap.from(slideFromServices,{
-        scrollTrigger:{
-            trigger:priceList,
-            start: startEnd,
-            end: startEnd,
-            toggleActions: "play none reset none",
-        },
-        scale:0.6,
-        duration:1,
-        onStart: () => {
-            if(!isLinkClicked){
-                priceListHeading.scrollIntoView({behavior:"smooth",block: "start"})
-            }
+// //to price list
+//     gsap.from(slideFromServices,{
+//         scrollTrigger:{
+//             trigger:priceList,
+//             start: startEnd,
+//             end: startEnd,
+//             toggleActions: "play none reset none",
+//         },
+//         scale:0.6,
+//         duration:1,
+//         onStart: () => {
+//             if(!isLinkClicked){
+//                 priceListHeading.scrollIntoView({behavior:"smooth",block: "start"})
+//             }
             
-        }
-    })
+//         }
+//     })
