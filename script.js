@@ -57,11 +57,13 @@ myImgs.forEach((elem, index) =>{
         lightBox.style.display = "block"
         isLinkClicked = true
         shownImg.src = `img/${index+1}.jpg`
+        document.querySelector("html").style.overflow = 'hidden'
     })
 })
 
 closeButton.addEventListener("click", () => {
     lightBox.style.display = "none"
+    document.querySelector("html").style.overflow = '';
     isLinkClicked = false
 })
 //Funguje pouze pokud bude fotek min nez 10
