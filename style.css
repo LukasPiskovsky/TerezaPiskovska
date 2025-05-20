@@ -408,11 +408,11 @@ section h2::after{
     }
 
     .prev{
-        left:0px;
+        left:-20px;
     }
 
     .next{
-        right:0px;
+        right:-20px;
     }
 
     #logo{
