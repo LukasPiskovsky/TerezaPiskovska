@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // VARIABLES
 const menu = document.getElementById("menu")
-const logo = document.querySelector("#logo")
+const logo = document.querySelector("#logo-link")
 const lightBox = document.querySelector(".my-light-box")
 const myImgs = document.querySelectorAll(".img-about-me")
 const shownImg = document.querySelector(".shown-img")
@@ -181,8 +181,6 @@ logo.addEventListener("click", () =>{
 })
 
 //navBar Anchors -> disable scrollinto view
-
-
 anchors.forEach((link) => {
     link.addEventListener("click", () =>{
         isLinkClicked = true
