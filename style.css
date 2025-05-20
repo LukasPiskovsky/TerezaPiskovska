@@ -156,6 +156,88 @@ nav ul li a:hover::after{
     display:inline-block;
 }
 
+/**************Lightbox**************/
+.my-light-box{
+    display:none;
+    position: fixed;
+    z-index: 999999999999999;
+    padding-top: 100px;
+    left:50%;
+    top:10%;
+    width: 80%;
+    left:10%;
+    height:100%;
+    margin: auto;
+    background-color: var(--beige-700-transparent);
+}
+
+@supports(backdrop-filter: blur(2px)){
+    .my-light-box{
+        backdrop-filter: blur(2px);
+    }
+}
+
+.close-button{
+    color:var(--pink-300);
+    position:absolute;
+    top:0px;
+    right:25px;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+    background-color: var(--beige-500-transparent);
+    border-radius: 0 0 10px 10px;
+    user-select: none;
+    transition: all 0.4s ease-out;
+}
+
+.close-button:hover{
+    background-color: var(--pink-700);
+}
+
+.prev, .next{
+    position:absolute;
+    top:50%;
+    width: auto;
+    color: var(--pink-300);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--beige-500-transparent);
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    transition: all 0.4s ease-out;
+    user-select: none;
+}
+
+.prev{
+    left:5px;
+    border-radius: 10px 0 0 10px;
+}
+
+.next{
+    right:5px;
+    border-radius: 0 10px 10px 0;
+}
+
+.prev:hover, .next:hover{
+    background-color: var(--pink-700);
+}
+
+.my-light-box-content{
+    position: relative;
+    margin: auto;
+    width:90%;
+    max-width: 600px;
+    margin-top: -50px;
+}
+
+.my-slides img{
+    width:100%;
+}
+
         /**************MAIN**************/
 
 main{
@@ -312,6 +394,25 @@ section h2::after{
 
     nav ul li a{
         padding:5px;
+    }
+
+    .my-light-box{
+        height:50%;
+        width: 100%;
+        top:30%;
+        left:0;
+    }
+
+    .my-light-box-content{
+        margin-top: 10px;
+    }
+
+    .prev{
+        left:0px;
+    }
+
+    .next{
+        right:0px;
     }
 
     #logo{

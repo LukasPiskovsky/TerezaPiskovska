@@ -3,6 +3,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 // VARIABLES
 const menu = document.getElementById("menu")
+const lightBox = document.querySelector(".my-light-box")
+const myImgs = document.querySelectorAll(".img-about-me")
+const shownImg = document.querySelector(".shown-img")
+const closeButton = document.querySelector(".close-button")
+const prevButton = document.querySelector(".prev")
+const nextButton = document.querySelector(".next")
 const navBar = document.querySelector("nav")
 const header = document.querySelector("header")
 const headingOne = document.querySelectorAll(".heading-one")
@@ -20,6 +26,8 @@ const anchors = document.querySelectorAll("ul li a")
 const arrow = document.querySelectorAll(".arrow")
 const serviceP = document.querySelectorAll(".service-p")
 
+
+let isLinkClicked = false
 
 //vh
 function setRealVh() {
@@ -40,6 +48,41 @@ menu.addEventListener("click", () =>{
         navBar.classList.remove("open")
         menu.src = "img/menu.svg"
     })})
+})
+
+//Lightbox
+
+myImgs.forEach((elem, index) =>{
+    elem.addEventListener("click", () =>{
+        lightBox.style.display = "block"
+        isLinkClicked = true
+        shownImg.src = `img/${index+1}.jpg`
+    })
+})
+
+closeButton.addEventListener("click", () => {
+    lightBox.style.display = "none"
+    isLinkClicked = false
+})
+//Funguje pouze pokud bude fotek min nez 10
+prevButton.addEventListener("click", () =>{
+    let src = shownImg.getAttribute("src")
+    let num = src.substring(4, 5)
+    if(num > 1){
+        shownImg.src = myImgs[num-2].getAttribute("src")
+    } else {
+        shownImg.src = myImgs[myImgs.length -1].getAttribute("src")
+    }
+})
+
+nextButton.addEventListener("click", ()=>{
+    let src = shownImg.getAttribute("src")
+    let num = src.substring(4, 5)
+    if(num >= (myImgs.length)){
+        shownImg.src = myImgs[0].getAttribute("src")
+    } else{
+        shownImg.src = myImgs[num].getAttribute("src")
+    }
 })
 
 //Services
@@ -89,7 +132,6 @@ window.addEventListener("DOMContentLoaded", () =>{
 
 //navBar Anchors -> disable scrollinto view
 
-let isLinkClicked = false
 
 anchors.forEach((link) => {
     link.addEventListener("click", () =>{
