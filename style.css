@@ -161,7 +161,7 @@ nav ul li a:hover::after{
     display:none;
     position: fixed;
     z-index: 999999999999999;
-    padding-top: 100px;
+    padding-top: 10%;
     left:50%;
     top:10%;
     width: 80%;
@@ -190,6 +190,7 @@ nav ul li a:hover::after{
     border-radius: 0 0 10px 10px;
     user-select: none;
     transition: all 0.4s ease-out;
+    z-index: 9999999999;
 }
 
 .close-button:hover{
@@ -229,12 +230,13 @@ nav ul li a:hover::after{
 .my-light-box-content{
     position: relative;
     margin: auto;
-    width:90%;
+    width:100%;
     max-width: 600px;
-    margin-top: -50px;
 }
 
 .my-slides img{
+    display: block;
+    margin:auto;
     width:100%;
 }
 
@@ -397,22 +399,30 @@ section h2::after{
     }
 
     .my-light-box{
-        height:50%;
+        height:100%;
         width: 100%;
-        top:30%;
+        top:0;
         left:0;
     }
 
     .my-light-box-content{
-        margin-top: 10px;
+        margin-top: 50%;
+        margin-bottom:0%;
+        translate: 0% -50%;
+    }
+
+    .my-slides img{
+        display: block;
+        width:100%;
+        margin: auto;
     }
 
     .prev{
-        left:-20px;
+        left:0px;
     }
 
     .next{
-        right:-20px;
+        right:0px;
     }
 
     #logo{
@@ -506,4 +516,10 @@ section h2::after{
         border-radius: 0px 0px 0 0;
     }
 
+}
+
+@media (max-width:650px){
+    .my-slides img{
+        translate:0% 25%;
+    }
 }
