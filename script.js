@@ -22,6 +22,9 @@ const aboutMeHeading = document.getElementById("about-me-heading")
 const slideFromaboutMe = document.querySelector(".slide-from-about-me")
 const services = document.getElementById("services")
 const servicesHeading = document.getElementById("services-heading")
+const slideFromServices = document.querySelector(".slide-from-services")
+const priceList = document.getElementById("price-list")
+const priceListHeading = document.getElementById("price-list-heading")
 const anchors = document.querySelectorAll("ul li a")
 const arrow = document.querySelectorAll(".arrow")
 const serviceP = document.querySelectorAll(".service-p")
@@ -144,16 +147,16 @@ anchors.forEach((link) => {
     })
 })
 
+
+let startEnd = window.innerWidth > 868 ? "top 90%" : "top 80%"
 //to about me
-if (window.innerWidth > 868){
     gsap.from(slideFromHeader,{
         scrollTrigger:{
             trigger:aboutMe,
-            start: "top 90%",
-            end: "top 90%",
+            start: startEnd,
+            end: startEnd,
             toggleActions: "play none reset none",
         },
-        // x: -1000,
         scale:0.6,
         duration:1,
         onStart: () => {
@@ -162,35 +165,15 @@ if (window.innerWidth > 868){
             }
         }
     })
-} else {
-        gsap.from(slideFromHeader,{
-        scrollTrigger:{
-            trigger:aboutMe,
-            start: "top 80%",
-            end: "top 80%",
-            toggleActions: "play none reset none",
-        },
-        // x: -1000,
-        scale:0.6,
-        duration:1,
-        onStart: () => {
-            if(!isLinkClicked){
-                aboutMeHeading.scrollIntoView({behavior:"smooth",block: "start"})
-            }
-        }
-    })
-}
 
 //to services
-if (window.innerWidth > 868){
     gsap.from(slideFromaboutMe,{
         scrollTrigger:{
             trigger:services,
-            start: "top 90%",
-            end: "top 90%",
+            start: startEnd,
+            end: startEnd,
             toggleActions: "play none reset none",
         },
-        // x: -1000,
         scale:0.6,
         duration:1,
         onStart: () => {
@@ -200,21 +183,21 @@ if (window.innerWidth > 868){
             
         }
     })
-} else {
-        gsap.from(slideFromaboutMe,{
+
+//to price list
+    gsap.from(slideFromServices,{
         scrollTrigger:{
-            trigger:services,
-            start: "top 80%",
-            end: "top 80%",
+            trigger:priceList,
+            start: startEnd,
+            end: startEnd,
             toggleActions: "play none reset none",
         },
-        // x: -1000,
         scale:0.6,
         duration:1,
         onStart: () => {
             if(!isLinkClicked){
-                servicesHeading.scrollIntoView({behavior:"smooth",block: "start"})
+                priceListHeading.scrollIntoView({behavior:"smooth",block: "start"})
             }
+            
         }
     })
-}
