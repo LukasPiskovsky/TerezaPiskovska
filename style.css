@@ -159,6 +159,7 @@ nav ul li a:hover::after{
 /**************Lightbox**************/
 .my-light-box{
     display:none;
+    align-content: center;
     position: fixed;
     z-index: 999999999999999;
     padding-top: 10%;
@@ -234,7 +235,7 @@ nav ul li a:hover::after{
     max-width: 600px;
 }
 
-.my-slides img{
+.my-slides{
     display: block;
     margin:auto;
     width:100%;
@@ -411,7 +412,7 @@ section h2::after{
         translate: 0% -50%;
     }
 
-    .my-slides img{
+    .my-slides{
         display: block;
         width:100%;
         margin: auto;
@@ -516,10 +517,4 @@ section h2::after{
         border-radius: 0px 0px 0 0;
     }
 
-}
-
-@media (max-width:650px){
-    .my-slides img{
-        translate:0% 25%;
-    }
 }

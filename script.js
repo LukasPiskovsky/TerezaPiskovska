@@ -62,7 +62,7 @@ myImgs.forEach((elem, index) =>{
 })
 
 closeButton.addEventListener("click", () => {
-    lightBox.style.display = "none"
+    lightBox.style.display = "grid"
     document.querySelector("html").style.overflow = '';
     isLinkClicked = false
 })
