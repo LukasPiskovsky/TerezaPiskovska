@@ -355,7 +355,7 @@ section h2::after{
 
 .arrow{
     position: relative;
-    bottom:0px;
+    bottom:-1px;
     background-color: var(--beige-700-transparent);
     scale: 1.4;
     cursor: pointer;
@@ -460,6 +460,115 @@ section h2::after{
     font-size: 1.1rem;
 } */
 
+/**************contact**************/
+
+.contact-map-container{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.map{
+    width:100%;
+    height:calc(var(--vh, 1vh) * 40);
+    /* height:40svh; */
+    border-radius: 0 0 10px 10px;
+    transform-origin: top;
+    opacity: 0.85;
+}
+
+.map:hover{
+    opacity: 1;
+}
+
+.contact-container{
+    display: flex;
+    width:100%;
+    color: #444;
+    font-family: "Cinzel", serif;
+}
+
+.contact-details{
+    position: relative;
+    width:50%;
+    background-color: var(--pink-300);
+    border-radius: 10px 0 0 0;
+    transform-origin:right;
+    align-content: center;
+    margin: 0 auto;
+}
+.contact-details p{
+    padding-left:10%;
+    line-height: 2.2rem;
+}
+
+.contact-details p span{
+    color: var(--beige-700);
+}
+
+.ig{
+    position: absolute;
+    width:50px;
+    height:50px;
+    left:50%;
+    translate: -50% 20%;
+}
+
+.my-form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    gap:10px;
+    padding: 20px;
+    background-color: var(--beige-700-transparent);
+    border-radius: 0 10px 0 0;
+    transform-origin:left;
+}
+
+.my-form input[type="text"],.my-form input[type="email"],.my-form input[type="tel"]{
+    padding:5px;
+    background-color: var(--pink-300);
+    border: none;
+    outline: none;
+}
+
+.my-form textarea{
+    padding: 5px;
+    width:80%;
+    height:150px;
+    background-color: var(--pink-300);
+    border: none;
+    outline: none;
+}
+
+::placeholder{
+    transition: all .5s ease-out;
+    color:#777
+}
+
+.my-form input[type="text"]:focus::placeholder,.my-form input[type="email"]:focus::placeholder,.my-form input[type="tel"]:focus::placeholder, .my-form textarea:focus::placeholder{
+    translate: -100% 0;
+}
+
+.my-form input[type="submit"]{
+    padding:5px 15px;
+    background-color: var(--pink-300);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+
+.my-form input[type="submit"]:hover{
+    background-color: var(--pink-700);
+    color: var(--white-color);
+}
+
+
+/**************Scroll-bar**************/
 /* Target the whole scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
@@ -620,6 +729,33 @@ section h2::after{
         border-radius: 0px 0px 0 0;
     }
 
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+    }
+
+    .map{
+        border-radius: 0px;
+    }
+
+    .contact-details{
+        width:100%;
+        border-radius: 0px;
+        height: calc(var(--vh, 1vh) * 40);
+        min-height: 320px;
+        /* height: 30svh; */
+        transform-origin:left;
+        font-size: 0.7rem;
+        align-content: start;
+        padding-top:20px;
+    }
+
+    .my-form{
+        width:100%;
+        border-radius: 0px;
+        transform-origin:right;
+    }
 }
 
 /* @media (max-width:1250px){

@@ -24,8 +24,8 @@ const slideFromaboutMe = document.querySelector(".slide-from-about-me")
 const services = document.getElementById("services")
 const servicesHeading = document.getElementById("services-heading")
 const slideFromServices = document.querySelector(".slide-from-services")
-const priceList = document.getElementById("price-list")
-const priceListHeading = document.getElementById("price-list-heading")
+const contact = document.getElementById("contact")
+const contactHeading = document.getElementById("contact-heading")
 const anchors = document.querySelectorAll("ul li a")
 const arrow = document.querySelectorAll(".arrow")
 const serviceP = document.querySelectorAll(".service-p")
@@ -100,6 +100,14 @@ arrow.forEach((elem, index) =>{
     })    
 })
 
+//Contact
+document.querySelector(".ig").addEventListener("mouseenter", () =>{
+    document.querySelector(".ig").src = "img/instagram_color.png"
+})
+
+document.querySelector(".ig").addEventListener("mouseleave", () =>{
+    document.querySelector(".ig").src = "img/instagram.png"
+})
 
 // ANIMATIONS
 
@@ -227,20 +235,44 @@ let startEnd = window.innerWidth > 868 ? "top 90%" : "top 80%"
         }
     })
 
-// //to price list
-//     gsap.from(slideFromServices,{
-//         scrollTrigger:{
-//             trigger:priceList,
-//             start: startEnd,
-//             end: startEnd,
-//             toggleActions: "play none reset none",
-//         },
-//         scale:0.6,
-//         duration:1,
-//         onStart: () => {
-//             if(!isLinkClicked){
-//                 priceListHeading.scrollIntoView({behavior:"smooth",block: "start"})
-//             }
-            
-//         }
-//     })
+//to contact
+gsap.from(".contact-details",{
+    scrollTrigger:{
+        trigger:contact,
+        start: startEnd,
+        end: startEnd,
+        toggleActions: "play none reset none",
+    },
+    scaleX:0,
+    duration:1,
+    delay:0.3,
+})
+gsap.from(".my-form",{
+    scrollTrigger:{
+        trigger:contact,
+        start: startEnd,
+        end: startEnd,
+        toggleActions: "play none reset none",
+    },
+    scaleX:0,
+    duration:1,
+    delay:0.3
+})
+
+gsap.from(".map",{
+    scrollTrigger:{
+        trigger:contact,
+        start: startEnd,
+        end: startEnd,
+        toggleActions: "play none reset none",
+    },
+    scaleY:0,
+    duration:1,
+    delay:0.6,
+    onStart: () => {
+        if(!isLinkClicked){
+            contactHeading.scrollIntoView({behavior:"smooth",block: "start"})
+        }
+    }
+})
+
