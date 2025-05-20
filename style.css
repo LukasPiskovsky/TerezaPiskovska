@@ -306,7 +306,9 @@ section h2::after{
     width:60vw;
     margin: 0 auto;
     row-gap: 25px;
+
 }
+
 
 .grid-about-me img{
     width: 250px;
@@ -358,11 +360,13 @@ section h2::after{
     cursor: pointer;
     border-radius: 5px 5px 0 0;
     transition: all 0.15s ease-out;
+    user-select: none;
 }
 
 .arrow-open{
     border-radius: 0 0 5px 5px;
     rotate: 180deg;
+    user-select: none;
 }
 
 .service-p{
@@ -374,6 +378,7 @@ section h2::after{
     height: 0;
     padding: 20px;
     transition: all 0.1s ease-out;
+    transform-origin:top;
 }
 
 .service-p-open{
@@ -383,7 +388,7 @@ section h2::after{
 
 /**************Price-list**************/
 
-.price-list-container{
+/* .price-list-container{
     display: grid;
     grid-template-columns: repeat(3, 400px);
     justify-content: center;
@@ -452,7 +457,7 @@ section h2::after{
 .price-list-container table td{
     display: table-cell;
     font-size: 1.1rem;
-}
+} */
 
 /**QUERIES**/
 @media (max-width:868px){
@@ -593,7 +598,7 @@ section h2::after{
 
 }
 
-@media (max-width:1250px){
+/* @media (max-width:1250px){
 
     .price-list-container{
         display: grid;
@@ -657,4 +662,4 @@ section h2::after{
         display: table-cell;
         font-size: 1.1rem;
     }
-}
+} */
