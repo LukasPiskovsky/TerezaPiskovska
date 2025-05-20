@@ -54,7 +54,7 @@ menu.addEventListener("click", () =>{
 
 myImgs.forEach((elem, index) =>{
     elem.addEventListener("click", () =>{
-        lightBox.style.display = "block"
+        lightBox.style.display = "grid"
         isLinkClicked = true
         shownImg.src = `img/${index+1}.jpg`
         document.querySelector("html").style.overflow = 'hidden'
@@ -62,7 +62,7 @@ myImgs.forEach((elem, index) =>{
 })
 
 closeButton.addEventListener("click", () => {
-    lightBox.style.display = "grid"
+    lightBox.style.display = "none"
     document.querySelector("html").style.overflow = '';
     isLinkClicked = false
 })
