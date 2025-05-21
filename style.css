@@ -316,6 +316,7 @@ section h2::after{
     border: 10px solid var(--beige-500);
     border-radius: 20px;
     filter: brightness(0.8) contrast(0.8);
+    cursor: pointer;
     transition: all 0.4s ease-out;
 }
 
