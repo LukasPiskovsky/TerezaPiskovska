@@ -791,6 +791,10 @@ section h2::after{
         border-radius: 0px;
         transform-origin:right;
     }
+
+    .my-form textarea{
+        height:100px;
+    }
 }
 
 /* @media (max-width:1250px){
