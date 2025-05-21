@@ -59,15 +59,17 @@ menu.addEventListener("click", () =>{
 myImgs.forEach((elem, index) =>{
     elem.addEventListener("click", () =>{
         lightBox.style.display = "grid"
+        closeButton.style.display= "block"
         isLinkClicked = true
         shownImg.src = `img/${index+1}.jpg`
-        document.querySelector("html").style.overflow = 'hidden'
+        // document.querySelector("body").style.overflow = 'hidden'
     })
 })
 
 closeButton.addEventListener("click", () => {
     lightBox.style.display = "none"
-    document.querySelector("html").style.overflow = '';
+    closeButton.style.display= "none"
+    // document.querySelector("body").style.overflow = '';
     isLinkClicked = false
 })
 //Funguje pouze pokud bude fotek min nez 10
@@ -108,23 +110,18 @@ arrow.forEach((elem, index) => {
 
     animate();
 
-    elem.addEventListener("click", () => {
-        elem.classList.toggle("arrow-open");
-        serviceP[index].classList.toggle("service-p-open");
+elem.addEventListener("click", () => {
+    elem.classList.toggle("arrow-open");
+    serviceP[index].classList.toggle("service-p-open");
 
-        if (elem.classList.contains("arrow-open")) {
-            tween.pause(); // pozastaví animaci
-            gsap.set(elem,{bottom: -1})
-        } else {
-            tween.play(); // obnoví animaci
-        }
-    });
+    if (elem.classList.contains("arrow-open")) {
+        tween.pause(); // pozastaví animaci
+        gsap.set(elem,{bottom: -1})
+    } else {
+        tween.play(); // obnoví animaci
+    }
 });
-
-arrow.forEach((elem) => {
-    
-})
-
+});
 
 //Contact
 document.querySelector(".ig").addEventListener("mouseenter", () =>{
@@ -262,48 +259,49 @@ let startEnd = window.innerWidth > 868 ? "top 90%" : "top 80%"
             
         }
     })
-
 //to contact
+if(window.innerWidth > 868){
+    let startEndtoContact = "top 60%"
 
-let startEndtoContact = window.innerWidth > 868 ? "top 60%" : "top 50%"
+    gsap.from(".contact-details",{
+        scrollTrigger:{
+            trigger:contact,
+            start: startEndtoContact,
+            end: startEndtoContact,
+            toggleActions: "play none reset none",
+        },
+        scaleX:0,
+        duration:1,
+        delay:0.6,
+    })
+    gsap.from(".my-form",{
+        scrollTrigger:{
+            trigger:contact,
+            start: startEndtoContact,
+            end: startEndtoContact,
+            toggleActions: "play none reset none",
+        },
+        scaleX:0,
+        duration:1,
+        delay:0.6
+    })
 
-gsap.from(".contact-details",{
-    scrollTrigger:{
-        trigger:contact,
-        start: startEndtoContact,
-        end: startEndtoContact,
-        toggleActions: "play none reset none",
-    },
-    scaleX:0,
-    duration:1,
-    delay:0.6,
-})
-gsap.from(".my-form",{
-    scrollTrigger:{
-        trigger:contact,
-        start: startEndtoContact,
-        end: startEndtoContact,
-        toggleActions: "play none reset none",
-    },
-    scaleX:0,
-    duration:1,
-    delay:0.6
-})
+    gsap.from(".map",{
+        scrollTrigger:{
+            trigger:contact,
+            start: startEndtoContact,
+            end: startEndtoContact,
+            toggleActions: "play none reset none",
+        },
+        scaleY:0,
+        duration:1,
+        delay:0.9,
+        // onStart: () => {
+        //     if(!isLinkClicked){
+        //         contactHeading.scrollIntoView({behavior:"smooth",block: "start"})
+        //     }
+        // }
+    })
+}
 
-gsap.from(".map",{
-    scrollTrigger:{
-        trigger:contact,
-        start: startEndtoContact,
-        end: startEndtoContact,
-        toggleActions: "play none reset none",
-    },
-    scaleY:0,
-    duration:1,
-    delay:0.9,
-    onStart: () => {
-        if(!isLinkClicked){
-            contactHeading.scrollIntoView({behavior:"smooth",block: "start"})
-        }
-    }
-})
 

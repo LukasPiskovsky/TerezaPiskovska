@@ -168,9 +168,8 @@ nav ul li a:hover::after{
     align-content: center;
     justify-content: center;
     position: fixed;
-    z-index: 999;
+    z-index: 100000000;
     padding-top: 10%;
-    left:50%;
     top:0%;
     width: 100%;
     left:0%;
@@ -186,6 +185,7 @@ nav ul li a:hover::after{
 }
 
 .close-button{
+    display: none;
     color:var(--pink-300);
     position:absolute;
     top:0px;
@@ -675,14 +675,18 @@ section h2::after{
         display: block;
         position: fixed;
         width:2vw;
+        min-height: 2vw;
+        height:auto;
         left:1vw;
         top:calc(var(--vh, 1vh) * 1);
         /* top:1svh; */
         min-width: 40px;
         border-radius: 50%;
-        z-index: 101;
+        z-index: 99999;
         filter: brightness(0.93);
         opacity: 0.6;
+        pointer-events: auto;
+        user-select: none;
     }
 
     #menu{
@@ -691,8 +695,15 @@ section h2::after{
         right:2vw;
         top:calc(var(--vh, 1vh) * 2);
         /* top:2svh; */
-        z-index: 999;
+        z-index: 100000001;
         cursor: pointer;
+        pointer-events: auto;
+        touch-action: auto;
+        width: auto;
+        height: auto;
+        min-height: 2vw;
+        min-width: 2vw;
+        user-select: none;
     }
 
     .flex-header{
@@ -765,6 +776,7 @@ section h2::after{
     }
 
     .close-button{
+        display: none;
         top:0px;
         right:0px;
         font-size: 4rem;
