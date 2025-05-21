@@ -552,18 +552,20 @@ section h2::after{
 
 .my-form input[type="text"],.my-form input[type="email"],.my-form input[type="tel"]{
     padding:5px;
-    background-color: var(--pink-300);
+    background-color: var(--pink-500);
     border: none;
     outline: none;
+    transition: all 0.5s ease-out;
 }
 
 .my-form textarea{
     padding: 5px;
     width:80%;
     height:150px;
-    background-color: var(--pink-300);
+    background-color: var(--pink-500);
     border: none;
     outline: none;
+    transition: all 0.5s ease-out;
 }
 
 ::placeholder{
@@ -573,6 +575,10 @@ section h2::after{
 
 .my-form input[type="text"]:focus::placeholder,.my-form input[type="email"]:focus::placeholder,.my-form input[type="tel"]:focus::placeholder, .my-form textarea:focus::placeholder{
     translate: -100% 0;
+}
+
+.my-form input[type="text"]:focus,.my-form input[type="email"]:focus,.my-form input[type="tel"]:focus, .my-form textarea:focus{
+    background-color: var(--pink-300);
 }
 
 .my-form input[type="submit"]{
