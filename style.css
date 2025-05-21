@@ -339,7 +339,8 @@ section h2::after{
     background-attachment: fixed;
     width: 100vw;
     height:250px;
-    opacity: 0.8;
+    opacity: 0.7;
+    filter: blur(0.5px) brightness(0.7);
 }
 
 .services-container{
@@ -351,7 +352,7 @@ section h2::after{
     padding-top: 50px;
     row-gap: 50px;
     padding-inline: 10vw;
-    top:-215px;
+    top:-125px;
 }
 
 .services-item{
