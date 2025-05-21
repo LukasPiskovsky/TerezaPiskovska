@@ -764,6 +764,19 @@ section h2::after{
         border-radius: 0px 0px 0 0;
     }
 
+    .close-button{
+        top:0px;
+        right:0px;
+        font-size: 4rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 5px 20px;
+        background-color: var(--beige-500-transparent);
+        border-radius: 0 0 0px 10px;
+        user-select:unset;
+        z-index: 99999;
+    }
+
     .contact-container{
         display: flex;
         flex-direction: column;
