@@ -264,11 +264,14 @@ let startEnd = window.innerWidth > 868 ? "top 90%" : "top 80%"
     })
 
 //to contact
+
+let startEndtoContact = window.innerWidth > 868 ? "top 60%" : "top 50%"
+
 gsap.from(".contact-details",{
     scrollTrigger:{
         trigger:contact,
-        start: startEnd,
-        end: startEnd,
+        start: startEndtoContact,
+        end: startEndtoContact,
         toggleActions: "play none reset none",
     },
     scaleX:0,
@@ -278,8 +281,8 @@ gsap.from(".contact-details",{
 gsap.from(".my-form",{
     scrollTrigger:{
         trigger:contact,
-        start: startEnd,
-        end: startEnd,
+        start: startEndtoContact,
+        end: startEndtoContact,
         toggleActions: "play none reset none",
     },
     scaleX:0,
@@ -290,8 +293,8 @@ gsap.from(".my-form",{
 gsap.from(".map",{
     scrollTrigger:{
         trigger:contact,
-        start: startEnd,
-        end: startEnd,
+        start: startEndtoContact,
+        end: startEndtoContact,
         toggleActions: "play none reset none",
     },
     scaleY:0,
