@@ -327,13 +327,31 @@ section h2::after{
 
 /**************Services**************/
 
+#services{
+    width: 100vw;
+}
+
+.background-strip{
+    background: url(img/pexels-3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    height:250px;
+    opacity: 0.8;
+}
+
 .services-container{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     align-content: center;
     justify-content: center;
     padding-top: 50px;
     row-gap: 50px;
+    padding-inline: 10vw;
+    top:-215px;
 }
 
 .services-item{
@@ -356,12 +374,13 @@ section h2::after{
 .arrow{
     position: relative;
     bottom:-1px;
-    background-color: var(--beige-700-transparent);
     scale: 1.4;
     cursor: pointer;
+    background-color: var(--beige-700-transparent);
     border-radius: 5px 5px 0 0;
     transition: all 0.15s ease-out;
     user-select: none;
+    z-index: 3;
 }
 
 .arrow-open{
@@ -369,6 +388,8 @@ section h2::after{
     rotate: 180deg;
     user-select: none;
 }
+
+
 
 .service-p{
     color: #222;
@@ -685,6 +706,11 @@ section h2::after{
         }
     }
 
+    section{
+        width: 100vw;
+        margin: 0 auto;
+    }
+
     .main-heading{
         display: flex;
         flex-direction: column;
@@ -698,6 +724,7 @@ section h2::after{
     #about-me p {
         text-wrap: balance;
         width:100%;
+        padding-inline: 10vw;
     }
 
     .grid-about-me{

@@ -93,12 +93,38 @@ nextButton.addEventListener("click", ()=>{
 
 //Services
 
-arrow.forEach((elem, index) =>{
-    elem.addEventListener("click", () =>{
-        elem.classList.toggle("arrow-open")
-        serviceP[index].classList.toggle("service-p-open")
-    })    
+arrow.forEach((elem, index) => {
+    let tween;
+
+    function animate() {
+        tween = gsap.to(elem, {
+            bottom: 5,
+            duration: 0.5,
+            repeat: -1,
+            yoyo: true,
+            ease: "bounce.out"
+        });
+    }
+
+    animate();
+
+    elem.addEventListener("click", () => {
+        elem.classList.toggle("arrow-open");
+        serviceP[index].classList.toggle("service-p-open");
+
+        if (elem.classList.contains("arrow-open")) {
+            tween.pause(); // pozastaví animaci
+            gsap.set(elem,{bottom: -1})
+        } else {
+            tween.play(); // obnoví animaci
+        }
+    });
+});
+
+arrow.forEach((elem) => {
+    
 })
+
 
 //Contact
 document.querySelector(".ig").addEventListener("mouseenter", () =>{
@@ -188,6 +214,8 @@ logo.addEventListener("click", () =>{
     }
 })
 
+
+
 //navBar Anchors -> disable scrollinto view
 anchors.forEach((link) => {
     link.addEventListener("click", () =>{
@@ -245,7 +273,7 @@ gsap.from(".contact-details",{
     },
     scaleX:0,
     duration:1,
-    delay:0.3,
+    delay:0.6,
 })
 gsap.from(".my-form",{
     scrollTrigger:{
@@ -256,7 +284,7 @@ gsap.from(".my-form",{
     },
     scaleX:0,
     duration:1,
-    delay:0.3
+    delay:0.6
 })
 
 gsap.from(".map",{
@@ -268,7 +296,7 @@ gsap.from(".map",{
     },
     scaleY:0,
     duration:1,
-    delay:0.6,
+    delay:0.9,
     onStart: () => {
         if(!isLinkClicked){
             contactHeading.scrollIntoView({behavior:"smooth",block: "start"})
