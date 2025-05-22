@@ -307,7 +307,7 @@ section h2::after{
     width:60vw;
     margin: 0 auto;
     row-gap: 25px;
-
+    place-items: center;
 }
 
 
@@ -519,9 +519,10 @@ section h2::after{
     transform-origin:right;
     align-content: center;
     margin: 0 auto;
+    padding-top:50px;
 }
 .contact-details p{
-    padding-left:10%;
+    padding-inline:5%;
     line-height: 2.2rem;
 }
 
@@ -534,7 +535,8 @@ section h2::after{
     width:50px;
     height:50px;
     left:50%;
-    translate: -50% 20%;
+    top:0;
+    translate: -50% 10%;
 }
 
 .my-form{
@@ -749,12 +751,12 @@ section h2::after{
     .grid-about-me{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        width:80vw;
+        width:85vw;
         margin: 0 auto;
     }
 
     .grid-about-me img{
-    width: 150px;
+        width: 150px;
     }
 
     .services-container{
