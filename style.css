@@ -351,6 +351,7 @@ section h2::after{
     align-content: center;
     justify-content: center;
     padding-top: 50px;
+    column-gap: 20px;
     row-gap: 50px;
     padding-inline: 10vw;
     top:-125px;
@@ -359,7 +360,6 @@ section h2::after{
 .services-item{
     position: relative;
     text-align: center;
-    width:400px;
     height:fit-content;
     background-color: var(--pink-300);
     border-radius: 20px;

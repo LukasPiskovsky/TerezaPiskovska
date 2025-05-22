@@ -48,9 +48,11 @@ menu.addEventListener("click", () =>{
     navBar.classList.toggle("open")
     let isOpen = navBar.classList.contains("open")
     menu.src = isOpen ? "img/close.svg" : "img/menu.svg"
+    menu.ariaExpanded = isOpen ? true : false
     document.querySelectorAll("nav a").forEach(link => {link.addEventListener("click", () =>{
         navBar.classList.remove("open")
         menu.src = "img/menu.svg"
+        menu.ariaExpanded = false
     })})
 })
 
