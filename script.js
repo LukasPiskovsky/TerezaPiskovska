@@ -263,7 +263,7 @@ let startEnd = window.innerWidth > 868 ? "top 90%" : "top 80%"
     })
 //to contact
 if(window.innerWidth > 868){
-    let startEndtoContact = "top 60%"
+    let startEndtoContact = "top 70%"
 
     gsap.from(".contact-details",{
         scrollTrigger:{
