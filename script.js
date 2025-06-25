@@ -283,48 +283,47 @@ let startEnd = window.innerWidth > 868 ? "top 90%" : "top 80%"
         // }
     })
 //to contact
-if(window.innerWidth > 868){
-    let startEndtoContact = "top 80%"
+// if(window.innerWidth > 868){
+//     let starttoContact = "top 80%"
+//     let endtoContact = "top 80%"
 
-    gsap.from(".contact-details",{
-        scrollTrigger:{
-            trigger:contact,
-            start: startEndtoContact,
-            end: startEndtoContact,
-            toggleActions: "play none reset none",
-        },
-        scaleX:0,
-        duration:1,
-        delay:0.6,
-    })
-    gsap.from(".my-form",{
-        scrollTrigger:{
-            trigger:contact,
-            start: startEndtoContact,
-            end: startEndtoContact,
-            toggleActions: "play none reset none",
-        },
-        scaleX:0,
-        duration:1,
-        delay:0.6
-    })
+//     gsap.from(".contact-details",{
+//         scrollTrigger:{
+//             trigger:contact,
+//             start: starttoContact,
+//             end: endtoContact,
+//             toggleActions: "play none reset none",
+//         },
+//         scaleX:0,
+//         duration:1,
+//         delay:0.6,
+//     })
+//     gsap.from(".my-form",{
+//         scrollTrigger:{
+//             trigger:contact,
+//             start: starttoContact,
+//             end: endtoContact,
+//             toggleActions: "play none reset none",
+//         },
+//         scaleX:0,
+//         duration:1,
+//         delay:0.6
+//     })
 
-    gsap.from(".map",{
-        scrollTrigger:{
-            trigger:contact,
-            start: startEndtoContact,
-            end: startEndtoContact,
-            toggleActions: "play none reset none",
-        },
-        scaleY:0,
-        duration:1,
-        delay:0.9,
-        // onStart: () => {
-        //     if(!isLinkClicked){
-        //         contactHeading.scrollIntoView({behavior:"smooth",block: "start"})
-        //     }
-        // }
-    })
-}
-
-
+//     gsap.from(".map",{
+//         scrollTrigger:{
+//             trigger:contact,
+//             start: starttoContact,
+//             end: endtoContact,
+//             toggleActions: "play none reset none",
+//         },
+//         scaleY:0,
+//         duration:1,
+//         delay:0.9,
+//         // onStart: () => {
+//         //     if(!isLinkClicked){
+//         //         contactHeading.scrollIntoView({behavior:"smooth",block: "start"})
+//         //     }
+//         // }
+//     })
+// }
