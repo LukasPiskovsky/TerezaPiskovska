@@ -1,5 +1,6 @@
         /**************GENERAL**************/
 :root{
+    --beige-300-transparent:#ece0c85b;
     --beige-500:#f0d7a9;
     --beige-500-transparent:#f0d7a922;
     --beige-700:#af9573;
@@ -163,6 +164,18 @@ nav ul li a:hover::after{
 
 #t, #p {
     display:inline-block;
+}
+
+#reservation{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: var(--pink-300);
+    background-color: var(--beige-300-transparent);
+    padding:10px 100px;
+    border-radius: 20px;
+    margin-top: 100px;
 }
 
 /**************Lightbox**************/
@@ -801,5 +814,9 @@ section h2::after{
     .service-price-list:hover{
         background-color: var(--pink-700);
         border-radius: 0px;
+    }
+
+    #reservation{
+        margin-top: 20px;
     }
 }

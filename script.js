@@ -187,6 +187,12 @@ window.addEventListener("DOMContentLoaded", () =>{
     setTimeout(()=>{
         isHeaderAnimated = false
     },6000)
+
+    gsap.from("#reservation", {
+        opacity:0,
+        duration:2,
+        delay:1.5
+    })
 })
 
 logo.addEventListener("click", () =>{
@@ -277,7 +283,7 @@ let startEnd = window.innerWidth > 868 ? "top 90%" : "top 80%"
     })
 //to contact
 if(window.innerWidth > 868){
-    let startEndtoContact = "top 90%"
+    let startEndtoContact = "top 80%"
 
     gsap.from(".contact-details",{
         scrollTrigger:{
