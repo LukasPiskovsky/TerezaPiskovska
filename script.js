@@ -268,16 +268,16 @@ let startEnd = window.innerWidth > 868 ? "top 90%" : "top 80%"
         },
         scale:0.6,
         duration:1,
-        onStart: () => {
-            if(!isLinkClicked){
-                servicesHeading.scrollIntoView({behavior:"smooth",block: "start"})
-            }
+        // onStart: () => {
+        //     if(!isLinkClicked){
+        //         servicesHeading.scrollIntoView({behavior:"smooth",block: "start"})
+        //     }
             
-        }
+        // }
     })
 //to contact
 if(window.innerWidth > 868){
-    let startEndtoContact = "top 70%"
+    let startEndtoContact = "top 90%"
 
     gsap.from(".contact-details",{
         scrollTrigger:{
