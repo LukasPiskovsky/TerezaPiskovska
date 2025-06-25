@@ -29,6 +29,8 @@ const contactHeading = document.getElementById("contact-heading")
 const anchors = document.querySelectorAll("ul li a")
 const arrow = document.querySelectorAll(".arrow")
 const serviceP = document.querySelectorAll(".service-p")
+const serviceToggle = document.querySelectorAll(".service-toggle")
+const servicePriceList = document.querySelector(".service-price-list")
 
 
 let isLinkClicked = false
@@ -64,8 +66,20 @@ myImgs.forEach((elem, index) =>{
         closeButton.style.display= "block"
         isLinkClicked = true
         shownImg.src = `img/${index+1}.jpg`
+        lightBox.children[2].style.display = "block"
+        lightBox.children[3].style.display = "block"
         // document.querySelector("body").style.overflow = 'hidden'
     })
+})
+
+servicePriceList.addEventListener("click", () =>{
+        lightBox.style.display = "grid"
+        closeButton.style.display= "block"
+        isLinkClicked = true
+        shownImg.src = `img/cenik.jpg`
+        lightBox.children[2].style.display = "none"
+        lightBox.children[3].style.display = "none"
+        // document.querySelector("body").style.overflow = 'hidden'
 })
 
 closeButton.addEventListener("click", () => {
@@ -114,7 +128,7 @@ arrow.forEach((elem, index) => {
 
 elem.addEventListener("click", () => {
     elem.classList.toggle("arrow-open");
-    serviceP[index].classList.toggle("service-p-open");
+    serviceToggle[index].classList.toggle("service-open");
 
     if (elem.classList.contains("arrow-open")) {
         tween.pause(); // pozastaví animaci

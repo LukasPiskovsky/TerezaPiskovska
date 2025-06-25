@@ -360,6 +360,7 @@ section h2::after{
     row-gap: 50px;
     padding-inline: 10vw;
     top:-125px;
+    font-family: "Cinzel", serif;
 }
 
 .services-item{
@@ -369,6 +370,7 @@ section h2::after{
     background-color: var(--pink-300);
     border-radius: 20px;
     transition: all 0.4s ease-out;
+    font-weight: 500;
 }
 
 .services-item h3{
@@ -399,94 +401,57 @@ section h2::after{
 
 
 .service-p{
-    color: #222;
+    color:#222;
     text-wrap: balance;
     padding: 0px;
     font-size: 1.1rem;
-    scale:0;
     height: 0;
     padding: 20px;
-    transition: all 0.1s ease-out;
-    transform-origin:top;
 }
 
-.service-p-open{
+.service-toggle{
+    scale:0;
+    height: 0;
+    transition: all 0.1s ease-out;
+    transform-origin:top;
+    margin-bottom: 30px;
+}
+
+.service-open{
     scale:1;
     height: fit-content;
 }
 
-/**************Price-list**************/
 
-/* .price-list-container{
-    display: grid;
-    grid-template-columns: repeat(3, 400px);
-    justify-content: center;
-    column-gap: 20px;
-    row-gap: 75px;
+.service-ul{
+    color:#444;
+    padding-top:20px;
+}
+
+.service-ul li{
+    list-style-type: none;
+}
+
+.service-ul__extra{
+    color: #222;
+    font-size: 14px;
     padding-top: 20px;
 }
 
-.grid-item{
-    width:400px;
-    min-height:fit-content;
-    height:450px;
-    background-color: var(--beige-700-transparent);
-    border-radius: 20px;
-    padding:20px;
-    border: 2px solid var(--pink-300);
-}
-
-.grid-item:nth-child(2){
-    background-color: var(--pink-300);
-    color:#333;
-    height:calc(100% + 50px);
-    border: 2px solid var(--beige-700-transparent);
-}
-
-.grid-item:nth-child(3){
-    height:calc(100% + 100px);
-}
-
-.price-list-container table th{
-    display: flex;
-    justify-content: space-between;
+.service-price-list{
+    color:#222;
+    text-wrap: balance;
     font-size: 1.2rem;
-    color: var(--pink-500);
-    padding: 20px 10px;
-    background-color: #333;
-    border-radius: 15px 15px 0 0;
-    scale:1.125;
-    translate: 0% -29.5%;
+    font-weight: 600;
+    padding: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
 }
 
-.grid-item:nth-child(2) th{
-    color:var(--beige-700);
-    font-weight: bold;
-    translate: 0% -28.5%;
+.service-price-list:hover{
+    background-color: var(--pink-700);
+    border-radius: 20px;
 }
-
-.grid-item.center{
-    grid-column: 1/2;
-    height:fit-content;
-    width:800px;
-    margin-left: 20px;
-}
-
-.grid-item.center td{
-    padding-left: 50px;
-}
-
-
-#center{
-    justify-content: center;
-    display:table-cell;
-    scale: 1.059;
-}
-
-.price-list-container table td{
-    display: table-cell;
-    font-size: 1.1rem;
-} */
 
 /**************contact**************/
 
@@ -831,5 +796,10 @@ section h2::after{
     .ig{
         left:50%;
         translate: -50% 500%;
+    }
+
+    .service-price-list:hover{
+        background-color: var(--pink-700);
+        border-radius: 0px;
     }
 }
