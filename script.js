@@ -191,7 +191,8 @@ window.addEventListener("DOMContentLoaded", () =>{
     gsap.from("#reservation", {
         opacity:0,
         duration:2,
-        delay:1.5
+        delay:1.5,
+        ease: "power2"
     })
 })
 
