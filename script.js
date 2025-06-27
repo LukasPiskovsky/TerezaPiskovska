@@ -59,12 +59,13 @@ menu.addEventListener("click", () =>{
 })
 
 //Lightbox
-
+let id = null
 myImgs.forEach((elem, index) =>{
     elem.addEventListener("click", () =>{
         lightBox.style.display = "grid"
         closeButton.style.display= "block"
         isLinkClicked = true
+        id = elem.id
         shownImg.src = `img/${index+1}.jpg`
         lightBox.children[2].style.display = "block"
         lightBox.children[3].style.display = "block"
@@ -88,24 +89,24 @@ closeButton.addEventListener("click", () => {
     // document.querySelector("body").style.overflow = '';
     isLinkClicked = false
 })
-//Funguje pouze pokud bude fotek min nez 10
+
 prevButton.addEventListener("click", () =>{
-    let src = shownImg.getAttribute("src")
-    let num = src.substring(4, 5)
-    if(num > 1){
-        shownImg.src = myImgs[num-2].getAttribute("src")
+    if(id > 0){
+        id--
+        shownImg.src = myImgs[id].getAttribute("src")
     } else {
         shownImg.src = myImgs[myImgs.length -1].getAttribute("src")
+        id = myImgs.length -1
     }
 })
 
 nextButton.addEventListener("click", ()=>{
-    let src = shownImg.getAttribute("src")
-    let num = src.substring(4, 5)
-    if(num >= (myImgs.length)){
-        shownImg.src = myImgs[0].getAttribute("src")
+    if(id >= (myImgs.length -1)){
+        id = 0
+        shownImg.src = myImgs[id].getAttribute("src")
     } else{
-        shownImg.src = myImgs[num].getAttribute("src")
+        id++
+        shownImg.src = myImgs[id].getAttribute("src")
     }
 })
 
