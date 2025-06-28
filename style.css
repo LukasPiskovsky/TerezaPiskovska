@@ -338,6 +338,7 @@ section h2::after{
 
 .grid-about-me img{
     width: 250px;
+    aspect-ratio: 1/1;
     border: 10px solid var(--beige-500);
     border-radius: 20px;
     filter: brightness(0.8) contrast(0.8);
