@@ -142,11 +142,11 @@ elem.addEventListener("click", () => {
 
 //Contact
 document.querySelector(".ig").addEventListener("mouseenter", () =>{
-    document.querySelector(".ig").src = "img/instagram_color.png"
+    document.querySelector(".ig").src = "img/instagram.png"
 })
 
 document.querySelector(".ig").addEventListener("mouseleave", () =>{
-    document.querySelector(".ig").src = "img/instagram.png"
+    document.querySelector(".ig").src = "img/instagram_color.png"
 })
 
 // ANIMATIONS

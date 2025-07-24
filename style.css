@@ -3,13 +3,16 @@
     --beige-300-transparent:#ece0c85b;
     --beige-500:#f0d7a9;
     --beige-500-transparent:#f0d7a922;
-    --beige-700:#af9573;
-    --beige-700-transparent:#af9573dd;
+    /* --beige-700:#af9573; */
+    --beige-700:#bda481;
+    /* --beige-700-transparent:#af9573dd; */
+    --beige-700-transparent:#bda481dd;
     --white-color:#F8F4F0;
     --pink-300:#f5dcf1;
     --pink-500:#f0d0ea;
     --pink-700:#ecade1;
     --pink-900:#e98cd9;
+
 }
 
 *{
@@ -139,7 +142,7 @@ nav ul li a:hover::after{
 
 @supports(filter: brightness(0.9) contrast(0.8)){
     #header-img{
-        filter: brightness(0.9) contrast(0.8)
+        filter: brightness(0.9) contrast(0.9)
     }
 }
 
@@ -201,6 +204,7 @@ nav ul li a:hover::after{
     margin: auto;
     background-color: var(--beige-700-transparent);
 }
+
 
 @supports(backdrop-filter: blur(2px)){
     .my-light-box{
@@ -270,8 +274,10 @@ nav ul li a:hover::after{
     display: block;
     margin:auto;
     width:100%;
+    height: auto;
     translate:0 -15%;
     user-select: none;
+    object-fit: cover;
 }
 
         /**************MAIN**************/
@@ -320,7 +326,7 @@ section h2::after{
 
 #about-me p {
         font-size: clamp(1.1rem, 1.1vw, 2.2rem);
-        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.4);
         padding-bottom:50px;
         width:50%;
         margin:0 auto;
@@ -339,6 +345,7 @@ section h2::after{
 .grid-about-me img{
     width: 250px;
     aspect-ratio: 1/1;
+    object-fit: cover;
     border: 10px solid var(--beige-500);
     border-radius: 20px;
     filter: brightness(0.8) contrast(0.8);
@@ -522,6 +529,16 @@ section h2::after{
     color: var(--beige-700);
 }
 
+#contact-reservation{
+    text-decoration: none;
+    color: var(--pink-900);
+    transition: all 0.2s ease-out;
+}
+
+#contact-reservation:hover{
+    color: #888
+}
+
 .ig{
     position: absolute;
     width:50px;
@@ -582,7 +599,7 @@ section h2::after{
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    transition: all 0.4s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .my-form input[type="submit"]:hover{
@@ -590,6 +607,25 @@ section h2::after{
     color: var(--white-color);
 }
 
+/**************Footer**************/
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #444;
+    font-size: 1.05rem;
+}
+
+footer p {
+    line-height: 1.7rem;
+    color: var(--white-color);
+}
+
+footer p a {
+    color: var(--white-color);
+    text-decoration: none;
+}
 
 /**************Scroll-bar**************/
 /* Target the whole scrollbar */
