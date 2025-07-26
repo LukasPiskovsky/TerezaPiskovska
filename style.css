@@ -563,6 +563,15 @@ section h2::after{
     transform-origin:left;
 }
 
+.my-form label{
+    font-size: 14px;
+}
+
+.my-form label a{
+    text-decoration: none;
+    color: #666;
+}
+
 .my-form input[type="text"],.my-form input[type="email"],.my-form input[type="tel"]{
     padding:5px;
     background-color: var(--pink-500);
@@ -851,6 +860,7 @@ footer p a {
     .my-form textarea{
         height:100px;
     }
+
 
     .ig{
         left:50%;
